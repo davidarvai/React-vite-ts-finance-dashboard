@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# 💰 Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A hobby project – a simple finance dashboard built with React, TypeScript, and Vite, with unit testing using Vitest.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Purpose of the Project
 
-## React Compiler
+The main objectives of this project were:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- To understand how to set up a modern React application using Vite
+- To apply TypeScript for type safety and better developer experience
+- To implement a clean and scalable project structure
+- To practice writing reusable utility functions
+- To introduce unit testing using Vitest
+- To learn how to configure a testing environment for frontend applications
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧱 What Was Implemented
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. Project Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Initialized a React project using Vite
+- Configured TypeScript with strict mode enabled
+- Set up development, build, and preview scripts
+- Organized the project into logical folders
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. TypeScript Integration
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Added TypeScript support across the project
+- Defined custom types for application data
+- Ensured type safety in utility functions and components
+- Used strict compiler options to enforce best practices
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+### 3. Project Structure
+
+The project was structured to improve maintainability and scalability:
+
+- `assets/` → static resources
+- `hooks/` → custom React hooks
+- `services/` → API and external logic
+- `utils/` → reusable helper functions
+- `components/` → UI components (if applicable)
+
+---
+
+### 4. Utility Function Example
+
+A utility function (`calculateBalance`) was implemented to demonstrate business logic separation from UI:
+
+- Accepts an array of transactions
+- Each transaction contains an `amount`
+- Returns the total balance by summing all amounts
+
+This helps keep logic reusable and testable.
+
+---
+
+### 5. Unit Testing with Vitest
+
+- Installed and configured Vitest as the testing framework
+- Added jsdom to simulate a browser environment
+- Wrote unit tests for utility functions
+- Learned how to run tests in watch mode
+- Verified correctness of business logic using assertions
+
+---
+
+### 6. Testing Configuration
+
+- Configured Vitest in the Vite setup
+- Enabled global test APIs (`test`, `expect`)
+- Integrated TypeScript support for tests
+- Ensured test files are recognized using `.test.ts` naming convention
+
+---
+
+## 🚀 Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Vitest
+
